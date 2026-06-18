@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 손삼열 포트폴리오
 
-## Getting Started
+Next.js + TypeScript + Tailwind CSS + shadcn/ui 기반 반응형 포트폴리오입니다.
 
-First, run the development server:
+## 확인 방법
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+cd /Users/samuelson/Desktop/projects/samuel-portfolio
+npm run dev -- --port 3100
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+브라우저에서 열기:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+http://127.0.0.1:3100
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 주요 페이지
 
-## Learn More
+- `/` — 메인 포트폴리오
+- `/projects/roastore-automation` — 로아스토어 단종 상품 자동 표기 시스템
+- `/projects/book-kong` — Book-Kong 독서 기록 웹앱
+- `/projects/care-vision` — Care Vision 스마트홈 안전 모니터링
+- `/resume` — 웹 이력서
+- `/samuel-son-resume.pdf` — PDF 이력서
 
-To learn more about Next.js, take a look at the following resources:
+## 디자인 방향
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Vercel: 미니멀하고 개발자다운 타이포그래피
+- Linear: 정돈된 제품형 카드와 정보 구조
+- Toss: 한국어 설명 중심의 읽기 쉬운 문장
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 검증 결과
 
-## Deploy on Vercel
+```bash
+npm run build
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+빌드 성공 및 모든 주요 페이지 200 응답 확인 완료.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 다음에 수정할 것
+
+- 실제 이메일 입력
+- 로아스토어 민감정보 가림 처리된 스크린샷 추가
+- Book-Kong 담당 기능을 더 정확히 좁혀서 문장 보강
+- Care Vision 결과 이미지/스크린샷 추가
+- Vercel 배포 및 도메인 연결
