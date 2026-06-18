@@ -21,7 +21,8 @@ export const profile = {
   subtitle:
     "입고 요청 자동화처럼 작은 업무 문제를 직접 발견하고 개선한 경험이 있습니다. 현재 포항·경주·대구권에서 IT지원, 데이터관리, 운영지원, 사무자동화 직무를 준비하고 있습니다.",
   location: "포항 · 경주 · 대구",
-  contact: "GitHub 프로필 연락 가능",
+  email: "samyeol0930@gmail.com",
+  emailHref: "mailto:samyeol0930@gmail.com",
   github: "https://github.com/Samuel-0930",
   githubLabel: "github.com/Samuel-0930",
   targetRoles: ["IT지원", "데이터관리", "운영지원", "사무자동화", "커머스 운영"],

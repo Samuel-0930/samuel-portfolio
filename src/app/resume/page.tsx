@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowLeft, GitBranch, MapPin } from "lucide-react";
+import { ArrowLeft, GitBranch, Mail, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { experiences, profile, projects, skills } from "@/lib/portfolio-data";
@@ -33,7 +33,9 @@ export default function ResumePage() {
             <Link href={profile.github} target="_blank" rel="noreferrer" className="flex items-center gap-2 transition hover:text-neutral-950">
               <GitBranch className="size-4" /> {profile.githubLabel}
             </Link>
-            <p>연락: {profile.contact}</p>
+            <Link href={profile.emailHref} className="flex items-center gap-2 transition hover:text-neutral-950">
+              <Mail className="size-4" /> {profile.email}
+            </Link>
           </div>
         </header>
 

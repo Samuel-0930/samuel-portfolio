@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRight, GitBranch, MapPin } from "lucide-react";
+import { ArrowUpRight, GitBranch, Mail, MapPin } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -69,7 +69,9 @@ export default function Home() {
               <Link href={profile.github} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 transition hover:text-neutral-950">
                 <GitBranch className="size-4" />{profile.githubLabel}
               </Link>
-              <span className="inline-flex items-center gap-2">연락: {profile.contact}</span>
+              <Link href={profile.emailHref} className="inline-flex items-center gap-2 transition hover:text-neutral-950">
+                <Mail className="size-4" />{profile.email}
+              </Link>
             </div>
           </div>
 
