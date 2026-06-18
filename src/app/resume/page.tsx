@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowLeft, GitBranch, Mail, MapPin } from "lucide-react";
+import { ArrowLeft, GitBranch, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { experiences, profile, projects, skills } from "@/lib/portfolio-data";
@@ -24,14 +24,16 @@ export default function ResumePage() {
       <article className="mx-auto max-w-4xl bg-white p-8 shadow-xl shadow-neutral-900/10 print:shadow-none md:p-12">
         <header className="grid gap-6 md:grid-cols-[1fr_auto]">
           <div>
-            <p className="font-mono text-xs uppercase tracking-[0.24em] text-blue-600">Resume</p>
+            <p className="font-mono text-xs uppercase tracking-[0.24em] text-blue-600">이력서</p>
             <h1 className="mt-2 text-4xl font-semibold tracking-[-0.05em]">{profile.name}</h1>
             <p className="mt-3 max-w-2xl text-lg leading-8 text-neutral-600">{profile.headline}</p>
           </div>
           <div className="space-y-2 text-sm text-neutral-600">
-            <p className="flex items-center gap-2"><MapPin className="size-4" /> 포항 · 경주 · 대구</p>
-            <p className="flex items-center gap-2"><GitBranch className="size-4" /> github.com/Samuel-0930</p>
-            <p className="flex items-center gap-2"><Mail className="size-4" /> 이메일 입력 예정</p>
+            <p className="flex items-center gap-2"><MapPin className="size-4" /> {profile.location}</p>
+            <Link href={profile.github} target="_blank" rel="noreferrer" className="flex items-center gap-2 transition hover:text-neutral-950">
+              <GitBranch className="size-4" /> {profile.githubLabel}
+            </Link>
+            <p>연락: {profile.contact}</p>
           </div>
         </header>
 
@@ -97,6 +99,7 @@ export default function ResumePage() {
           <h2 className="resume-heading">학력 및 자격</h2>
           <ul className="mt-4 space-y-2 text-sm leading-6 text-neutral-700">
             <li>• 대학교 컴퓨터공학과 중퇴 예정 / 학점은행제 컴퓨터공학 학위 취득 예정</li>
+            <li>• 학위는 학점은행제로 마무리하며, 실무형 자동화·협업 프로젝트와 자격 학습을 병행하고 있습니다.</li>
             <li>• 해병대 만기전역</li>
             <li>• ADsP, Microsoft Azure Fundamentals</li>
           </ul>

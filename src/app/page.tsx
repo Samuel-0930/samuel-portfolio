@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRight, GitBranch, Mail, MapPin } from "lucide-react";
+import { ArrowUpRight, GitBranch, MapPin } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -25,9 +25,9 @@ export default function Home() {
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
           <Link href="/" className="font-semibold tracking-[-0.03em]">손삼열</Link>
           <nav className="hidden items-center gap-6 text-sm text-neutral-600 md:flex">
-            <a href="#projects" className="transition hover:text-neutral-950">Projects</a>
-            <a href="#experience" className="transition hover:text-neutral-950">Experience</a>
-            <a href="#skills" className="transition hover:text-neutral-950">Skills</a>
+            <a href="#projects" className="transition hover:text-neutral-950">프로젝트</a>
+            <a href="#experience" className="transition hover:text-neutral-950">경험</a>
+            <a href="#skills" className="transition hover:text-neutral-950">역량</a>
           </nav>
           <Button asChild size="sm" className="rounded-full">
             <Link href="/resume">이력서 보기</Link>
@@ -51,7 +51,7 @@ export default function Home() {
             <p className="mt-7 max-w-2xl text-lg leading-8 text-neutral-600 md:text-xl md:leading-9">{profile.subtitle}</p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Button asChild size="lg" className="rounded-full px-6">
-                <a href="#projects">프로젝트 보기</a>
+                <Link href="/resume">웹 이력서 보기</Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="rounded-full px-6">
                 <Link href="/samuel-son-resume.pdf" target="_blank" rel="noreferrer">
@@ -66,14 +66,16 @@ export default function Home() {
             </div>
             <div className="mt-8 flex flex-wrap items-center gap-4 text-sm text-neutral-500">
               <span className="inline-flex items-center gap-2"><MapPin className="size-4" />{profile.location}</span>
-              <span className="inline-flex items-center gap-2"><GitBranch className="size-4" />Samuel-0930</span>
-              <span className="inline-flex items-center gap-2"><Mail className="size-4" />Email ready</span>
+              <Link href={profile.github} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 transition hover:text-neutral-950">
+                <GitBranch className="size-4" />{profile.githubLabel}
+              </Link>
+              <span className="inline-flex items-center gap-2">연락: {profile.contact}</span>
             </div>
           </div>
 
           <Card className="overflow-hidden rounded-[2rem] border-neutral-200 bg-neutral-950 text-white shadow-2xl shadow-neutral-950/10">
             <CardHeader className="space-y-4 p-6 md:p-8">
-              <Badge className="w-fit rounded-full bg-blue-500/15 text-blue-200 hover:bg-blue-500/15">Featured Case</Badge>
+              <Badge className="w-fit rounded-full bg-blue-500/15 text-blue-200 hover:bg-blue-500/15">대표 사례</Badge>
               <CardTitle className="text-2xl leading-tight tracking-[-0.04em] md:text-3xl">{primaryProject.title}</CardTitle>
             </CardHeader>
             <CardContent className="space-y-7 p-6 pt-0 md:p-8 md:pt-0">
@@ -96,7 +98,7 @@ export default function Home() {
 
       <section className="mx-auto max-w-6xl px-5 py-16 md:py-24">
         <SectionHeader
-          eyebrow="Strengths"
+          eyebrow="강점"
           title="화려한 말보다, 실제 문제를 작게 해결한 증거"
           description="지원 직무는 IT지원·운영지원·데이터관리이지만, 보여줄 증거는 개발·자동화·AI 프로젝트로 준비했습니다."
         />
@@ -116,7 +118,7 @@ export default function Home() {
 
       <section id="projects" className="border-y border-neutral-200 bg-neutral-50/80">
         <div className="mx-auto max-w-6xl px-5 py-16 md:py-24">
-          <SectionHeader eyebrow="Projects" title="문제 → 행동 → 결과가 보이는 프로젝트" />
+          <SectionHeader eyebrow="프로젝트" title="문제 → 행동 → 결과가 보이는 프로젝트" />
           <div className="grid gap-5 lg:grid-cols-3">
             {projects.map((project) => (
               <Card key={project.slug} className="group flex flex-col overflow-hidden rounded-[1.75rem] border-neutral-200 bg-white transition duration-200 hover:-translate-y-1 hover:shadow-xl hover:shadow-neutral-900/7">
@@ -145,7 +147,7 @@ export default function Home() {
       </section>
 
       <section id="experience" className="mx-auto max-w-6xl px-5 py-16 md:py-24">
-        <SectionHeader eyebrow="Experience" title="운영·검수·리더십 경험" />
+        <SectionHeader eyebrow="경험" title="운영·검수·리더십 경험" />
         <div className="mx-auto max-w-3xl rounded-[2rem] border border-neutral-200 bg-white p-6 shadow-[0_0_0_1px_rgba(0,0,0,0.03)] md:p-8">
           {experiences.map((experience, index) => (
             <div key={experience.title}>
@@ -165,7 +167,7 @@ export default function Home() {
       <section id="skills" className="border-t border-neutral-200 bg-neutral-950 text-white">
         <div className="mx-auto max-w-6xl px-5 py-16 md:py-24">
           <div className="mb-10 max-w-3xl">
-            <p className="mb-3 font-mono text-xs font-medium uppercase tracking-[0.25em] text-blue-300">Skills</p>
+            <p className="mb-3 font-mono text-xs font-medium uppercase tracking-[0.25em] text-blue-300">역량</p>
             <h2 className="text-3xl font-semibold tracking-[-0.04em] md:text-5xl">바로 업무에 연결할 수 있는 도구들</h2>
           </div>
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
@@ -188,7 +190,7 @@ export default function Home() {
           <p>© 2026 손삼열. Built with Next.js, Tailwind CSS, shadcn/ui.</p>
           <div className="flex gap-4">
             <Link href={profile.github} target="_blank" rel="noreferrer" className="hover:text-neutral-950">GitHub</Link>
-            <Link href="/resume" className="hover:text-neutral-950">Resume</Link>
+            <Link href="/resume" className="hover:text-neutral-950">이력서</Link>
           </div>
         </div>
       </footer>

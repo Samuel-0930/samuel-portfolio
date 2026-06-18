@@ -17,12 +17,13 @@ export type Project = {
 
 export const profile = {
   name: "손삼열",
-  headline: "반복되는 업무 문제를 발견하고, IT 도구로 작게라도 개선하는 지원자",
+  headline: "반복 업무를 줄이고, 데이터와 문서를 정확하게 관리하는 운영형 IT 지원자",
   subtitle:
-    "Google Sheets Apps Script 업무 자동화, React 기반 팀 프로젝트, YOLOv8 Computer Vision 프로토타입을 경험했습니다. 현재 포항·경주·대구권에서 IT지원, 데이터관리, 운영지원, 사무자동화 직무를 준비하고 있습니다.",
-  location: "Pohang · Gyeongju · Daegu",
-  email: "이메일 입력 예정",
+    "입고 요청 자동화처럼 작은 업무 문제를 직접 발견하고 개선한 경험이 있습니다. 현재 포항·경주·대구권에서 IT지원, 데이터관리, 운영지원, 사무자동화 직무를 준비하고 있습니다.",
+  location: "포항 · 경주 · 대구",
+  contact: "GitHub 프로필 연락 가능",
   github: "https://github.com/Samuel-0930",
+  githubLabel: "github.com/Samuel-0930",
   targetRoles: ["IT지원", "데이터관리", "운영지원", "사무자동화", "커머스 운영"],
 };
 
@@ -87,16 +88,16 @@ export const projects: Project[] = [
     eyebrow: "React/Vite · Team Project · Scrum Master",
     period: "2024.02 - 2024.03",
     summary:
-      "독서 습관 형성을 돕는 모바일 반응형 SPA 웹앱입니다. 5인 팀 프로젝트에서 스크럼 마스터 및 프론트엔드 개발자로 참여했습니다.",
+      "독서 습관 형성을 돕는 모바일 반응형 SPA 웹앱입니다. 5인 팀 프로젝트에서 작업 관리, 협업 규칙 정리, 프론트엔드 개발을 함께 맡았습니다.",
     role: "스크럼 마스터 / 프론트엔드 개발",
     stack: ["React", "Vite", "React Router", "TanStack React Query", "PocketBase", "Tailwind CSS", "Storybook", "Netlify", "GitHub"],
     links: [
       { label: "GitHub", href: "https://github.com/FRONTENDSCHOOL8/Book-Kong" },
-      { label: "Deploy", href: "https://bookong.netlify.app" },
+      { label: "배포 화면", href: "https://bookong.netlify.app" },
     ],
     metrics: [
       { label: "팀 규모", value: "5명" },
-      { label: "GitHub 기여", value: "146 contributions" },
+      { label: "GitHub 기여", value: "146건" },
       { label: "작성 PR", value: "34개" },
     ],
     problem:
@@ -110,7 +111,7 @@ export const projects: Project[] = [
     results: [
       "기획, 디자인, 개발, 배포까지 전체 서비스 제작 흐름을 경험했습니다.",
       "Netlify로 실제 접근 가능한 서비스 형태로 배포했습니다.",
-      "스크럼 마스터 역할을 통해 일정 관리와 협업 조율 경험을 쌓았습니다.",
+      "스크럼 마스터 역할을 통해 작업 우선순위 정리, 일정 관리, 협업 조율 경험을 쌓았습니다.",
     ],
     learnings: [
       "코드 구현뿐 아니라 일정, 역할, 커뮤니케이션이 프로젝트 완성도에 큰 영향을 준다는 것을 배웠습니다.",
@@ -129,7 +130,7 @@ export const projects: Project[] = [
     eyebrow: "YOLOv8 · OpenCV · Firebase · Flutter Web",
     period: "프로토타입 프로젝트",
     summary:
-      "YOLOv8과 OpenCV를 활용해 낙상 및 화재 위험을 감지하고, Firebase Firestore와 Flutter Web 대시보드를 통해 보호자에게 알림을 제공하는 스마트홈 모니터링 프로토타입입니다.",
+      "YOLOv8과 OpenCV를 활용해 낙상 및 화재 위험 감지 흐름을 실험한 검증용 스마트홈 모니터링 프로토타입입니다.",
     role: "Computer Vision 프로토타입 구현 및 서비스 흐름 설계",
     stack: ["Python", "OpenCV", "YOLOv8", "Ultralytics", "Firebase Firestore", "Flutter Web"],
     links: [
@@ -152,7 +153,7 @@ export const projects: Project[] = [
       "Flutter Web 대시보드에서 방별 상태를 색상으로 표시하고 알림을 제공하는 흐름을 구성했습니다.",
     ],
     results: [
-      "실시간 영상 감지 → Firebase 상태 업데이트 → 보호자 대시보드 알림까지 이어지는 프로토타입 흐름을 구현했습니다.",
+      "실시간 영상 감지 → Firebase 상태 업데이트 → 보호자 대시보드 알림까지 이어지는 검증용 프로토타입 흐름을 구현했습니다.",
       "20명 사용자 테스트를 통해 색상 기반 위험 표시, 실시간 알림, 홈 레이아웃 커스터마이징에 대한 피드백을 수집했습니다.",
       "오탐 가능성, 프라이버시, 실제 환경 다양성 등 한계를 분석하고 개선 방향을 정리했습니다.",
     ],
@@ -188,10 +189,10 @@ export const experiences = [
 ];
 
 export const skills = [
-  { group: "Frontend", items: ["React", "Vite", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS"] },
-  { group: "Data / AI", items: ["Python", "Pandas", "OpenCV", "YOLOv8", "Firebase"] },
-  { group: "Automation", items: ["Google Sheets", "Apps Script", "Excel", "AI-assisted workflow"] },
-  { group: "Collaboration", items: ["Git", "GitHub", "Issues", "Pull Requests", "Scrum"] },
+  { group: "프론트엔드", items: ["React", "Vite", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS"] },
+  { group: "데이터·AI", items: ["Python", "Pandas", "OpenCV", "YOLOv8", "Firebase"] },
+  { group: "업무 자동화", items: ["Google Sheets", "Apps Script", "Excel", "AI-assisted workflow"] },
+  { group: "협업", items: ["Git", "GitHub", "Issues", "Pull Requests", "Scrum"] },
 ];
 
 export function getProject(slug: string) {

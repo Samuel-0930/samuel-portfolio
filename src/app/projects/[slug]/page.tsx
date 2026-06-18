@@ -59,7 +59,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         <aside className="space-y-4">
           <Card className="rounded-3xl border-neutral-200">
             <CardHeader>
-              <CardTitle className="text-lg">Project Info</CardTitle>
+              <CardTitle className="text-lg">프로젝트 정보</CardTitle>
             </CardHeader>
             <CardContent className="space-y-5 text-sm">
               <div>
@@ -81,7 +81,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 
           <Card className="rounded-3xl border-neutral-200 bg-neutral-950 text-white">
             <CardHeader>
-              <CardTitle className="text-lg">Metrics</CardTitle>
+              <CardTitle className="text-lg">핵심 지표</CardTitle>
             </CardHeader>
             <CardContent className="grid gap-3">
               {project.metrics.map((metric) => (
