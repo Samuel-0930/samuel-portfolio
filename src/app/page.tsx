@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { ArrowUpRight, GitBranch, Mail, MapPin } from "lucide-react";
+import Image from "next/image";
+import { ArrowUpRight, Camera, CheckCircle2, GitBranch, Mail, MapPin, Table2, UsersRound } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -13,6 +14,118 @@ function SectionHeader({ eyebrow, title, description }: { eyebrow: string; title
       <h2 className="text-3xl font-semibold tracking-[-0.04em] text-neutral-950 md:text-5xl">{title}</h2>
       {description ? <p className="mt-4 text-base leading-8 text-neutral-600 md:text-lg">{description}</p> : null}
     </div>
+  );
+}
+
+const proofCards = [
+  {
+    icon: Table2,
+    label: "업무 자동화",
+    title: "시트에서 바로 보이는 개선",
+    description: "단종 상품 누락을 자동 표기해 확인 시간을 줄였습니다.",
+    tone: "border-blue-100 bg-blue-50 text-blue-700",
+  },
+  {
+    icon: UsersRound,
+    label: "협업",
+    title: "이슈·PR 기반 작업 관리",
+    description: "5인 팀 프로젝트에서 작업 흐름과 커뮤니케이션을 정리했습니다.",
+    tone: "border-slate-200 bg-slate-50 text-slate-700",
+  },
+  {
+    icon: CheckCircle2,
+    label: "검증",
+    title: "프로토타입의 가능성과 한계 기록",
+    description: "AI 감지 흐름을 구현하고 오탐·프라이버시 한계를 분리했습니다.",
+    tone: "border-cyan-100 bg-cyan-50 text-cyan-700",
+  },
+];
+
+function ProfileProofCard() {
+  return (
+    <div className="relative mx-auto w-full max-w-[430px]">
+      <div className="absolute -left-8 top-10 hidden h-28 w-28 rounded-full bg-blue-200/50 blur-3xl md:block" />
+      <div className="absolute -bottom-8 right-4 hidden h-32 w-32 rounded-full bg-cyan-200/40 blur-3xl md:block" />
+      <div className="relative overflow-hidden rounded-[2.25rem] border border-neutral-200 bg-white p-3 shadow-2xl shadow-blue-950/10">
+        <div className="relative overflow-hidden rounded-[1.75rem] bg-neutral-950">
+          <Image
+            src="/profile-photo.png"
+            alt="손삼열 프로필 사진"
+            width={300}
+            height={300}
+            priority
+            className="aspect-[4/5] w-full object-cover"
+          />
+          <div className="absolute inset-x-4 bottom-4 rounded-3xl border border-white/15 bg-white/12 p-4 text-white shadow-2xl backdrop-blur-md">
+            <div className="flex items-center gap-2 text-xs font-medium text-blue-100">
+              <Camera className="size-3.5" />
+              <span>Portfolio Identity</span>
+            </div>
+            <p className="mt-1 text-lg font-semibold tracking-[-0.03em]">손삼열 · 운영형 IT 지원자</p>
+            <p className="mt-2 text-sm leading-6 text-white/72">실제 문제를 발견하고, 작게 개선하며, 끝까지 정리합니다.</p>
+          </div>
+        </div>
+        <div className="grid grid-cols-3 gap-2 pt-3 text-center text-xs">
+          <div className="rounded-2xl bg-neutral-50 p-3">
+            <p className="font-semibold text-neutral-950">5분→10초</p>
+            <p className="mt-1 text-neutral-500">확인 시간</p>
+          </div>
+          <div className="rounded-2xl bg-neutral-50 p-3">
+            <p className="font-semibold text-neutral-950">34개</p>
+            <p className="mt-1 text-neutral-500">작성 PR</p>
+          </div>
+          <div className="rounded-2xl bg-neutral-50 p-3">
+            <p className="font-semibold text-neutral-950">20명</p>
+            <p className="mt-1 text-neutral-500">테스트</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function VisualProofSection() {
+  return (
+    <section className="mx-auto max-w-6xl px-5 py-16 md:py-24">
+      <SectionHeader
+        eyebrow="시각 증거"
+        title="말보다 먼저 보이는 작업 방식"
+        description="참고 영상의 원칙처럼 장식은 줄이고, 채용 담당자가 바로 이해할 수 있는 증거를 전면에 배치했습니다."
+      />
+      <div className="grid gap-5 lg:grid-cols-3">
+        {proofCards.map((item) => {
+          const Icon = item.icon;
+          return (
+            <Card key={item.title} className="overflow-hidden rounded-[2rem] border-neutral-200 bg-white shadow-[0_16px_48px_rgba(15,23,42,0.06)]">
+              <CardHeader className="space-y-4">
+                <div className={`flex size-12 items-center justify-center rounded-2xl border ${item.tone}`}>
+                  <Icon className="size-5" />
+                </div>
+                <div>
+                  <p className="text-sm font-medium text-blue-600">{item.label}</p>
+                  <CardTitle className="mt-2 text-2xl tracking-[-0.04em]">{item.title}</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent className="space-y-5">
+                <p className="leading-7 text-neutral-600">{item.description}</p>
+                <div className="rounded-3xl border border-neutral-200 bg-neutral-50 p-3">
+                  <div className="grid gap-2">
+                    <div className="h-3 w-2/3 rounded-full bg-neutral-200" />
+                    <div className="grid grid-cols-4 gap-2">
+                      <div className="h-16 rounded-2xl bg-white shadow-sm" />
+                      <div className="h-16 rounded-2xl bg-blue-100 shadow-sm" />
+                      <div className="h-16 rounded-2xl bg-white shadow-sm" />
+                      <div className="h-16 rounded-2xl bg-neutral-900 shadow-sm" />
+                    </div>
+                    <div className="h-3 w-1/2 rounded-full bg-neutral-200" />
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          );
+        })}
+      </div>
+    </section>
   );
 }
 
@@ -36,7 +149,7 @@ export default function Home() {
       </header>
 
       <section className="relative overflow-hidden border-b border-neutral-200 bg-[radial-gradient(circle_at_20%_10%,#eff6ff_0,#ffffff_34%,#ffffff_100%)]">
-        <div className="mx-auto grid max-w-6xl gap-12 px-5 py-20 md:grid-cols-[1.15fr_0.85fr] md:py-28">
+        <div className="mx-auto grid max-w-6xl gap-12 px-5 py-16 md:grid-cols-[1.05fr_0.95fr] md:py-24">
           <div className="flex flex-col justify-center">
             <div className="mb-6 flex flex-wrap gap-2">
               {profile.targetRoles.map((role) => (
@@ -75,28 +188,32 @@ export default function Home() {
             </div>
           </div>
 
-          <Card className="overflow-hidden rounded-[2rem] border-neutral-200 bg-neutral-950 text-white shadow-2xl shadow-neutral-950/10">
-            <CardHeader className="space-y-4 p-6 md:p-8">
-              <Badge className="w-fit rounded-full bg-blue-500/15 text-blue-200 hover:bg-blue-500/15">대표 사례</Badge>
-              <CardTitle className="text-2xl leading-tight tracking-[-0.04em] md:text-3xl">{primaryProject.title}</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-7 p-6 pt-0 md:p-8 md:pt-0">
-              <p className="leading-7 text-neutral-300">{primaryProject.summary}</p>
-              <div className="grid gap-3 sm:grid-cols-3">
-                {primaryProject.metrics.map((metric) => (
-                  <div key={metric.label} className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-                    <p className="text-xs text-neutral-400">{metric.label}</p>
-                    <p className="mt-2 text-lg font-semibold">{metric.value}</p>
-                  </div>
-                ))}
-              </div>
-              <Button asChild variant="secondary" className="rounded-full">
-                <Link href={`/projects/${primaryProject.slug}`}>자세히 보기</Link>
-              </Button>
-            </CardContent>
-          </Card>
+          <ProfileProofCard />
         </div>
       </section>
+
+      <section className="border-b border-neutral-200 bg-neutral-950 text-white">
+        <div className="mx-auto grid max-w-6xl gap-8 px-5 py-12 md:grid-cols-[0.9fr_1.1fr] md:py-16">
+          <div>
+            <Badge className="rounded-full bg-blue-500/15 text-blue-200 hover:bg-blue-500/15">대표 사례</Badge>
+            <h2 className="mt-5 text-3xl font-semibold tracking-[-0.045em] md:text-5xl">{primaryProject.title}</h2>
+            <p className="mt-5 max-w-xl leading-8 text-neutral-300">{primaryProject.summary}</p>
+            <Button asChild variant="secondary" className="mt-8 rounded-full">
+              <Link href={`/projects/${primaryProject.slug}`}>자세히 보기</Link>
+            </Button>
+          </div>
+          <div className="grid gap-3 sm:grid-cols-3 md:self-end">
+            {primaryProject.metrics.map((metric) => (
+              <div key={metric.label} className="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-5 shadow-2xl shadow-black/10">
+                <p className="text-sm text-neutral-400">{metric.label}</p>
+                <p className="mt-3 text-2xl font-semibold tracking-[-0.04em]">{metric.value}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <VisualProofSection />
 
       <section className="mx-auto max-w-6xl px-5 py-16 md:py-24">
         <SectionHeader
