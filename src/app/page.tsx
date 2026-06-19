@@ -76,7 +76,6 @@ function VisualProofSection() {
       <SectionHeader
         eyebrow="시각 증거"
         title="말보다 먼저 보이는 작업 방식"
-        description="참고 영상의 원칙처럼 장식은 줄이고, 채용 담당자가 바로 이해할 수 있는 증거를 전면에 배치했습니다."
       />
       <div className="grid gap-5 lg:grid-cols-3">
         {proofCards.map((item) => {
@@ -92,20 +91,8 @@ function VisualProofSection() {
                   <CardTitle className="mt-2 text-2xl tracking-[-0.04em]">{item.title}</CardTitle>
                 </div>
               </CardHeader>
-              <CardContent className="space-y-5">
+              <CardContent>
                 <p className="leading-7 text-neutral-600">{item.description}</p>
-                <div className="rounded-3xl border border-neutral-200 bg-neutral-50 p-3">
-                  <div className="grid gap-2">
-                    <div className="h-3 w-2/3 rounded-full bg-neutral-200" />
-                    <div className="grid grid-cols-4 gap-2">
-                      <div className="h-16 rounded-2xl bg-white shadow-sm" />
-                      <div className="h-16 rounded-2xl bg-blue-100 shadow-sm" />
-                      <div className="h-16 rounded-2xl bg-white shadow-sm" />
-                      <div className="h-16 rounded-2xl bg-neutral-900 shadow-sm" />
-                    </div>
-                    <div className="h-3 w-1/2 rounded-full bg-neutral-200" />
-                  </div>
-                </div>
               </CardContent>
             </Card>
           );
