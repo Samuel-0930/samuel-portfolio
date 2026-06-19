@@ -51,8 +51,8 @@ function ProfileProofCard() {
           <Image
             src="/profile-photo.png"
             alt="손삼열 프로필 사진"
-            width={300}
-            height={300}
+            width={912}
+            height={1173}
             priority
             className="aspect-[4/5] w-full object-cover"
           />
@@ -63,20 +63,6 @@ function ProfileProofCard() {
             </div>
             <p className="mt-1 text-lg font-semibold tracking-[-0.03em]">손삼열 · 운영형 IT 지원자</p>
             <p className="mt-2 text-sm leading-6 text-white/72">실제 문제를 발견하고, 작게 개선하며, 끝까지 정리합니다.</p>
-          </div>
-        </div>
-        <div className="grid grid-cols-3 gap-2 pt-3 text-center text-xs">
-          <div className="rounded-2xl bg-neutral-50 p-3">
-            <p className="font-semibold text-neutral-950">5분→10초</p>
-            <p className="mt-1 text-neutral-500">확인 시간</p>
-          </div>
-          <div className="rounded-2xl bg-neutral-50 p-3">
-            <p className="font-semibold text-neutral-950">34개</p>
-            <p className="mt-1 text-neutral-500">작성 PR</p>
-          </div>
-          <div className="rounded-2xl bg-neutral-50 p-3">
-            <p className="font-semibold text-neutral-950">20명</p>
-            <p className="mt-1 text-neutral-500">테스트</p>
           </div>
         </div>
       </div>
