@@ -2,10 +2,15 @@
 
 Next.js + TypeScript + Tailwind CSS + shadcn/ui 기반 반응형 포트폴리오입니다.
 
+## 저장소
+
+- GitHub: https://github.com/Samuel-0930/samuel-portfolio
+- 배포/PR 워크플로우: [DEPLOYMENT.md](./DEPLOYMENT.md)
+
 ## 확인 방법
 
 ```bash
-cd /Users/samuelson/Desktop/projects/samuel-portfolio
+cd /Users/samuelson/Desktop/Projects/samuel-portfolio
 npm run dev -- --port 3100
 ```
 
@@ -53,4 +58,4 @@ public/profile-photo.png
 - 로아스토어 민감정보 가림 처리된 스크린샷 추가
 - Book-Kong 실제 화면 캡처 추가
 - Care Vision 결과 이미지/스크린샷 추가
-- Vercel 배포 및 도메인 연결
+- Vercel에서 GitHub 저장소 Import 후 Production URL README에 추가
